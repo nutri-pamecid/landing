@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indicaciones de Evaluación · Pamela Cid</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;
+  --purple-light:#ede9fe;
+  --purple-dark:#5b21b6;
+  --green:#16a34a;
+  --green-light:#f0fdf4;
+  --yellow:#f5c518;
+  --cream:#fafaf8;
+  --white:#ffffff;
+  --text:#1a1714;
+  --muted:#6b6560;
+  --border:rgba(124,58,237,0.1);
+}
+body{
+  background:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  color:var(--text);
+  max-width:480px;
+  margin:0 auto;
+  padding:0;
+}
+
+/* PORTADA */
+.cover{
+  background:var(--purple-dark);
+  min-height:45vh;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:2.5rem 2rem;
+  position:relative;overflow:hidden;
+}
+.cover::before{
+  content:'';
+  position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:rgba(245,197,24,0.1);
+}
+.cover-badge{
+  font-size:10px;font-weight:600;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+  margin-bottom:0.75rem;
+  position:relative;z-index:1;
+}
+.cover h1{
+  font-family:'Fraunces',serif;
+  font-size:2.4rem;font-weight:300;
+  color:white;line-height:1.15;
+  position:relative;z-index:1;
+  margin-bottom:0.5rem;
+}
+.cover h1 em{font-style:italic;color:var(--yellow)}
+.cover-sub{
+  font-size:13px;font-weight:300;
+  color:rgba(255,255,255,0.65);
+  line-height:1.6;
+  position:relative;z-index:1;
+}
+
+/* CONTENIDO */
+.content{padding:2rem 1.75rem}
+
+.intro{
+  font-size:14px;color:var(--muted);font-weight:300;
+  line-height:1.7;margin-bottom:2rem;
+  padding-bottom:1.5rem;
+  border-bottom:0.5px solid var(--border);
+}
+.intro em{font-style:italic}
+
+/* SECCIÓN */
+.section{margin-bottom:2rem}
+.section-header{
+  background:var(--purple);
+  border-radius:10px;
+  padding:10px 16px;
+  font-size:12px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:white;margin-bottom:1.25rem;
+}
+
+/* ITEMS */
+.items{display:flex;flex-direction:column;gap:12px}
+.item{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--white);
+  border:0.5px solid var(--border);
+  border-radius:14px;
+  padding:1rem 1.25rem;
+}
+.item-icon{
+  flex-shrink:0;
+  width:28px;height:28px;
+  border-radius:50%;
+  background:var(--green-light);
+  border:1.5px solid rgba(22,163,74,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;
+  margin-top:1px;
+}
+.item-text{
+  font-size:14px;color:var(--text);font-weight:300;line-height:1.6;
+}
+.item-text strong{font-weight:600}
+
+/* GÉNERO */
+.genero-grid{display:flex;flex-direction:column;gap:10px;margin-top:0.5rem}
+.genero-card{
+  background:var(--purple-light);
+  border:0.5px solid rgba(124,58,237,0.2);
+  border-radius:12px;
+  padding:1rem 1.25rem;
+}
+.genero-title{
+  font-size:12px;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--purple-dark);margin-bottom:5px;
+}
+.genero-card p{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.6}
+
+/* NOTA FINAL */
+.nota{
+  background:var(--yellow);
+  border-radius:14px;
+  padding:1.25rem;
+  margin-top:1rem;
+}
+.nota p{
+  font-size:14px;font-weight:500;
+  color:var(--text);line-height:1.6;
+}
+
+/* FOOTER */
+.footer{
+  background:var(--purple-dark);
+  padding:2rem 1.75rem;
+  text-align:center;
+}
+.footer p{font-size:12px;color:rgba(255,255,255,0.5);font-weight:300}
+.footer strong{color:rgba(255,255,255,0.85);font-weight:500;display:block;margin-bottom:4px;font-size:13px}
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+  <p class="cover-badge">Programa Nutricional · Pamela Cid</p>
+  <h1>Indicaciones de<br><em>evaluación</em></h1>
+  <p class="cover-sub">Asesoría presencial · Viña del Mar</p>
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+
+  <p class="intro">Con el fin de brindar un servicio de la mejor calidad posible y cumplir con los objetivos de cada atención nutricional, es importante que revises estas indicaciones antes de tu sesión. <em>(No es obligatorio medirse si no lo deseas).</em></p>
+
+  <!-- MEDICIÓN -->
+  <div class="section">
+    <div class="section-header">Medición ISAK 1 · Bioimpedancia</div>
+
+    <div class="items">
+      <div class="item">
+        <div class="item-icon">✅</div>
+        <p class="item-text">Debes estar en <strong>ayuno o que tu última comida haya sido 2–3 horas antes.</strong></p>
+      </div>
+      <div class="item">
+        <div class="item-icon">✅</div>
+        <p class="item-text"><strong>No realizar ningún tipo de ejercicio</strong> previo ni el mismo día de la evaluación.</p>
+      </div>
+      <div class="item">
+        <div class="item-icon">✅</div>
+        <p class="item-text">Evita el <strong>consumo de alcohol</strong> el día anterior y el mismo día de la medición.</p>
+      </div>
+      <div class="item">
+        <div class="item-icon">✅</div>
+        <p class="item-text">Mantener una <strong>correcta hidratación</strong> — evitar estar deshidratado y tampoco sobre hidratarse.</p>
+      </div>
+    </div>
+
+    <div class="genero-grid" style="margin-top:1.25rem">
+      <div class="genero-card">
+        <p class="genero-title">Mujeres</p>
+        <p>No debes estar con tu periodo menstrual. Debes asistir con <strong>short / calza corta deportiva y peto deportivo.</strong></p>
+      </div>
+      <div class="genero-card">
+        <p class="genero-title">Hombres</p>
+        <p>Se realiza con <strong>short deportivo y sin polera</strong> para realizar medidas de tren superior.</p>
+      </div>
+    </div>
+
+    <div class="nota" style="margin-top:1.25rem">
+      <p>Tendrás acceso a una app para ver tus medidas (ISAK 1) y un informe (Bioimpedancia) — juntos evaluaremos tus resultados en la sesión.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>Pamela Cid · Nutricionista</strong>
+  <p>@nutri.pamecid · WhatsApp +56 9 8906 8812</p>
+</div>
+
+</body>
+</html>
