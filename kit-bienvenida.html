@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Bienvenida · Programa 6 Semanas</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;
+  --purple-light:#ede9fe;
+  --purple-mid:#a78bfa;
+  --purple-dark:#5b21b6;
+  --yellow:#f5c518;
+  --cream:#fafaf8;
+  --white:#ffffff;
+  --text:#1a1714;
+  --muted:#6b6560;
+  --light:#a8a29e;
+  --border:rgba(124,58,237,0.1);
+}
+body{
+  background:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  color:var(--text);
+  line-height:1.6;
+  max-width:480px;
+  margin:0 auto;
+  padding:0;
+}
+
+/* PORTADA */
+.cover{
+  background:#5b21b6;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:3rem 2.5rem;
+  position:relative;
+  overflow:hidden;
+  page-break-after:always;
+}
+.cover::before{
+  content:'';
+  position:absolute;
+  top:-80px;right:-80px;
+  width:320px;height:320px;
+  border-radius:50%;
+  background:rgba(245,197,24,0.12);
+}
+.cover::after{
+  content:'';
+  position:absolute;
+  bottom:-100px;left:-60px;
+  width:280px;height:280px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.06);
+}
+.cover-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(255,255,255,0.15);
+  border:0.5px solid rgba(255,255,255,0.2);
+  border-radius:100px;
+  padding:6px 14px;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.9);
+  width:fit-content;
+}
+.cover-dot{width:5px;height:5px;border-radius:50%;background:var(--yellow)}
+.cover-main{position:relative;z-index:1;margin:auto 0}
+.cover-eyebrow{
+  font-size:12px;
+  font-weight:400;
+  color:rgba(255,255,255,0.6);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  margin-bottom:1.25rem;
+}
+.cover h1{
+  font-family:'Fraunces',serif;
+  font-size:3.2rem;
+  font-weight:300;
+  line-height:1.1;
+  color:var(--white);
+  margin-bottom:1.5rem;
+}
+.cover h1 em{
+  font-style:italic;
+  color:var(--yellow);
+}
+.cover-sub{
+  font-size:15px;
+  font-weight:300;
+  color:rgba(255,255,255,0.7);
+  line-height:1.7;
+  max-width:320px;
+}
+.cover-footer{
+  position:relative;z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.cover-name{
+  font-size:13px;
+  font-weight:500;
+  color:rgba(255,255,255,0.85);
+}
+.cover-handle{
+  font-size:12px;
+  color:rgba(255,255,255,0.5);
+}
+
+/* PÁGINAS */
+.page{
+  padding:2.5rem 2rem;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  border-bottom:1px solid var(--border);
+  page-break-after:always;
+}
+.page-label{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--purple);
+  margin-bottom:0.75rem;
+}
+.page h2{
+  font-family:'Fraunces',serif;
+  font-size:2rem;
+  font-weight:300;
+  line-height:1.2;
+  margin-bottom:0.5rem;
+  color:var(--text);
+}
+.page h2 em{font-style:italic;color:var(--purple)}
+.page-intro{
+  font-size:13px;
+  color:var(--muted);
+  font-weight:300;
+  line-height:1.6;
+  margin-bottom:1rem;
+  padding-bottom:1rem;
+  border-bottom:0.5px solid var(--border);
+}
+
+/* ITEMS DEL PROGRAMA */
+.items-grid{display:flex;flex-direction:column;gap:12px;margin-bottom:2rem}
+.item{
+  background:var(--white);
+  border:0.5px solid var(--border);
+  border-radius:16px;
+  padding:1.25rem;
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.item-num{
+  flex-shrink:0;
+  width:32px;height:32px;
+  border-radius:50%;
+  background:#5b21b6;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:600;color:white;
+}
+.item-body h3{
+  font-size:14px;font-weight:600;color:var(--text);
+  margin-bottom:4px;
+}
+.item-body p{
+  font-size:13px;color:var(--muted);font-weight:300;line-height:1.6;
+}
+.item-note{
+  font-size:11px;color:var(--purple);font-weight:500;
+  margin-top:5px;display:block;
+}
+
+/* SESIONES */
+.sesiones{display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
+.sesion{
+  background:var(--purple-light);
+  border:0.5px solid rgba(124,58,237,0.15);
+  border-radius:14px;
+  padding:1.1rem 1.25rem;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.sesion-num{
+  flex-shrink:0;
+  width:28px;height:28px;
+  border-radius:50%;
+  background:#5b21b6;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:white;
+}
+.sesion-body h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
+.sesion-body p{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.5}
+
+/* WHATSAPP */
+.wsp-card{
+  background:#5b21b6;
+  border-radius:18px;
+  padding:1.75rem;
+  color:white;
+  margin-bottom:1.5rem;
+}
+.wsp-card h3{
+  font-family:'Fraunces',serif;
+  font-size:1.4rem;font-weight:300;
+  margin-bottom:0.75rem;
+  line-height:1.3;
+}
+.wsp-card p{font-size:13px;font-weight:300;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:1rem}
+.wsp-horario{
+  background:rgba(255,255,255,0.12);
+  border-radius:10px;
+  padding:0.875rem 1rem;
+  font-size:12.5px;color:rgba(255,255,255,0.9);
+  line-height:1.7;
+}
+.wsp-horario strong{font-weight:600;display:block;margin-bottom:3px}
+
+/* LISTA EJEMPLOS */
+.ejemplos{display:flex;flex-direction:column;gap:8px;margin:1rem 0}
+.ejemplo{
+  display:flex;gap:10px;align-items:flex-start;
+  font-size:13px;color:var(--muted);font-weight:300;line-height:1.5;
+}
+.ejemplo::before{
+  content:'→';
+  flex-shrink:0;
+  color:var(--purple);
+  font-weight:600;
+  margin-top:1px;
+}
+
+/* PASOS */
+.pasos{display:flex;flex-direction:column;gap:6px;margin-bottom:1rem}
+.paso{
+  background:var(--white);
+  border:0.5px solid var(--border);
+  border-left:3px solid var(--purple);
+  border-radius:0 10px 10px 0;
+  padding:0.65rem 1rem;
+}
+.paso-header{
+  display:flex;gap:8px;align-items:center;
+  margin-bottom:3px;
+}
+.paso-n{
+  font-size:9px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--purple);
+}
+.paso h4{font-size:12.5px;font-weight:600;color:var(--text)}
+.paso p{font-size:11.5px;color:var(--muted);font-weight:300;line-height:1.5}
+.paso-pregunta{
+  font-size:10.5px;color:var(--purple-dark);font-weight:500;
+  font-style:italic;margin-top:4px;
+}
+
+/* HABITOS */
+.habito{
+  background:var(--white);
+  border:0.5px solid var(--border);
+  border-radius:14px;
+  padding:1.25rem;
+  margin-bottom:10px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.habito-icon{
+  flex-shrink:0;
+  width:36px;height:36px;
+  border-radius:10px;
+  background:var(--purple-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+}
+.habito h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.habito p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.6}
+
+/* CIERRE */
+.cierre{
+  background:#5b21b6;
+  min-height:60vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:3rem 2.5rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cierre::before{
+  content:'';
+  position:absolute;
+  top:-60px;right:-60px;
+  width:200px;height:200px;
+  border-radius:50%;
+  background:rgba(245,197,24,0.1);
+}
+.cierre h2{
+  font-family:'Fraunces',serif;
+  font-size:2.2rem;
+  font-weight:300;
+  color:white;
+  line-height:1.2;
+  margin-bottom:1rem;
+  position:relative;z-index:1;
+}
+.cierre h2 em{font-style:italic;color:var(--yellow)}
+.cierre p{
+  font-size:14px;font-weight:300;
+  color:rgba(255,255,255,0.7);
+  line-height:1.7;margin-bottom:1.5rem;
+  position:relative;z-index:1;
+}
+.cierre-contact{
+  position:relative;z-index:1;
+  background:rgba(255,255,255,0.12);
+  border-radius:14px;
+  padding:1.25rem;
+  font-size:13px;color:rgba(255,255,255,0.9);
+  line-height:1.8;
+}
+.cierre-contact strong{display:block;font-weight:600;margin-bottom:4px;font-size:14px}
+
+/* DIVIDER */
+.divider{
+  height:0.5px;
+  background:var(--border);
+  margin:1.5rem 0;
+}
+
+/* YELLOW BOX */
+.yellow-box{
+  background:#fefce8;
+  border:0.5px solid rgba(245,197,24,0.4);
+  border-radius:14px;
+  padding:1.25rem;
+  margin:1rem 0;
+}
+.yellow-box-title{
+  font-size:11px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:#b45309;margin-bottom:6px;display:block;
+}
+.yellow-box p{font-size:13px;color:#78716c;font-weight:300;line-height:1.6}
+
+@media print{
+  .page,.cover,.cierre{page-break-after:always}
+}
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+  <div class="cover-badge"><span class="cover-dot"></span>Programa Nutricional · 6 Semanas</div>
+  <div class="cover-main">
+    <p class="cover-eyebrow">Bienvenida a tu proceso</p>
+    <h1>Tu kit de<br><em>inicio</em></h1>
+    <p class="cover-sub">Todo lo que necesitas para entender el programa, saber cómo empezar y aprovechar al máximo estas 6 semanas.</p>
+  </div>
+  <div class="cover-footer">
+    <div>
+      <p class="cover-name">Pamela Cid · Nutricionista</p>
+      <p class="cover-handle">@nutri.pamecid</p>
+    </div>
+  </div>
+</div>
+
+<!-- PÁG 1 · QUÉ INCLUYE -->
+<div class="page">
+  <span class="page-label">Tu programa</span>
+  <h2>Qué incluye<br><em>el programa</em></h2>
+  <p class="page-intro">Todo lo que recibiste fue pensado para ayudarte a avanzar de forma realista y sostenible. Acá te explico qué es cada cosa y para qué sirve.</p>
+
+  <div class="items-grid">
+    <div class="item">
+      <div class="item-num">1</div>
+      <div class="item-body">
+        <h3>Tu pauta personalizada</h3>
+        <p>PDF con tu nombre que incluye tus objetivos nutricionales, porciones diarias, distribución por comidas, indicaciones pre y post entreno, suplementación si aplica e hidratación.</p>
+        <span class="item-note">Se envía hasta 3 días hábiles post primera sesión</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-num">2</div>
+      <div class="item-body">
+        <h3>Guía de porciones e intercambio</h3>
+        <p>Todos los alimentos por grupo con cantidades equivalentes. Úsala cada vez que quieras variar o no tengas un alimento disponible.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-num">3</div>
+      <div class="item-body">
+        <h3>Guía de etiquetado nutricional</h3>
+        <p>Cómo leer etiquetas y listado de ingredientes. Para que puedas tomar mejores decisiones en el supermercado.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-num">4</div>
+      <div class="item-body">
+        <h3>Videos de apoyo</h3>
+        <p>Disponibles durante las 6 semanas completas. Te ayudarán a entender tu pauta y aplicarla con claridad desde el día 1.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="yellow-box">
+    <span class="yellow-box-title">Informe de composición corporal</span>
+    <p>Con ISAK 1 recibirás tu informe vía app 5Componentes. Con bioimpedancia recibirás el informe del equipo. Disponible en modalidad presencial.</p>
+  </div>
+</div>
+
+<!-- PÁG 2 · SESIONES -->
+<div class="page">
+  <span class="page-label">Tus sesiones</span>
+  <h2>2 sesiones<br><em>incluidas</em></h2>
+  <p class="page-intro">El programa tiene una sesión al inicio y una al cierre. La fecha de sesión de cierre es agendada en tu primera sesión.</p>
+
+  <div class="sesiones">
+    <div class="sesion">
+      <div class="sesion-num">1</div>
+      <div class="sesion-body">
+        <h4>Sesión inicial · Semana 1</h4>
+        <p>Evaluación de composición corporal, objetivos y entrega de tu pauta personalizada. Acá definimos desde dónde partes y hacia dónde vamos.</p>
+      </div>
+    </div>
+    <div class="sesion">
+      <div class="sesion-num">2</div>
+      <div class="sesion-body">
+        <h4>Sesión de cierre · Semana 6</h4>
+        <p>Medición final y comparación con tus resultados iniciales — cambios en composición corporal, energía, rendimiento en el entrenamiento, hábitos y relación con la comida.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="wsp-card">
+    <h3>Acompañamiento por WhatsApp · 6 semanas</h3>
+    <p>Canal directo conmigo para cualquier duda de tu pauta, alimentación u objetivo. Prefiero que preguntes a que te quedes con la duda.</p>
+    <div class="wsp-horario">
+      <strong>Horario de atención</strong>
+      Lun–Vie · 8:00 – 21:00 hrs<br>
+      Sáb · 8:00 – 18:00 hrs<br>
+      <span style="font-size:11px;opacity:0.75">Respondo el mismo día en horario hábil.</span>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.6">Puedes escribirme para intercambiar alimentos, organizar comidas en días complicados, dudas sobre entrenamiento y rendimiento, o cualquier cosa de tu proceso.</p>
+</div>
+
+<!-- PÁG 3 · CÓMO EMPEZAR + HÁBITOS -->
+<div class="page">
+  <span class="page-label">Cómo empezar</span>
+  <h2>5 pasos para<br><em>la primera semana</em></h2>
+  <p class="page-intro">La organización no se nace teniéndola — es un hábito que se construye. Más decisiones preparadas = más fácil mantener tu alimentación.</p>
+
+  <div class="pasos">
+    <div class="paso">
+      <div class="paso-header">
+        <span class="paso-n">Paso 1</span>
+        <h4>Haz tu compra de alimentos</h4>
+      </div>
+      <p>Organiza tu compra semanal con alimentos de tu pauta. Incluye lo que ya te gusta y compra pensando en preparaciones que ya haces.</p>
+      <p class="paso-pregunta">¿Qué alimentos de mi pauta necesito sí o sí esta semana?</p>
+    </div>
+    <div class="paso">
+      <div class="paso-header">
+        <span class="paso-n">Paso 2</span>
+        <h4>Planifica 1–2 días para preparar</h4>
+      </div>
+      <p>Busca el día con más tiempo. Cocina proteínas, deja carbohidratos listos y verduras lavadas. Los alimentos duran 3–4 días refrigerados.</p>
+      <p class="paso-pregunta">¿Qué día tengo tiempo para dejar cosas adelantadas?</p>
+    </div>
+    <div class="paso">
+      <div class="paso-header">
+        <span class="paso-n">Paso 3</span>
+        <h4>Organiza el día anterior</h4>
+      </div>
+      <p>Planifica la noche anterior qué vas a comer al día siguiente. Evita decisiones impulsivas identificando las comidas clave que más se te complican.</p>
+      <p class="paso-pregunta">¿Cuál es la comida que más se me dificulta y cómo resolverla hoy?</p>
+    </div>
+    <div class="paso">
+      <div class="paso-header">
+        <span class="paso-n">Paso 4</span>
+        <h4>Lee tu pauta antes de empezar</h4>
+      </div>
+      <p>Revisa tus porciones diarias. Porciona los alimentos que vas a llevar fuera de casa y deja listos los del último tiempo de comida del día.</p>
+      <p class="paso-pregunta">¿Estoy revisando las porciones antes de servir o improvisando a ojo?</p>
+    </div>
+    <div class="paso">
+      <div class="paso-header">
+        <span class="paso-n">Paso 5</span>
+        <h4>Usa el sistema de intercambio</h4>
+      </div>
+      <p>Puedes repetir tus comidas varios días. Si quieres variar, revisa la guía de porciones. La flexibilidad dentro de la estructura no es salirse del plan.</p>
+      <p class="paso-pregunta">¿Qué alimentos puedo intercambiar según lo que tengo disponible?</p>
+    </div>
+  </div>
+</div>
+
+<!-- PÁG 4 · HÁBITOS -->
+<div class="page">
+  <span class="page-label">Hábitos clave</span>
+  <h2>Empieza por<br><em>estos 3</em></h2>
+  <p class="page-intro">No necesitas hacerlo todo perfecto para avanzar. Necesitas repetir acciones hasta que se vuelvan parte de tu rutina.</p>
+
+  <div class="habito">
+    <div class="habito-icon">🌅</div>
+    <div>
+      <h4>Desayuna todos los días</h4>
+      <p>Mejor control del hambre durante el día, más energía y menos picoteos impulsivos más tarde.</p>
+    </div>
+  </div>
+  <div class="habito">
+    <div class="habito-icon">💪</div>
+    <div>
+      <h4>Incluye proteína en tus comidas principales</h4>
+      <p>Desayuno, almuerzo y cena. Mayor saciedad, mejor mantención y desarrollo de masa muscular, mejor recuperación muscular.</p>
+    </div>
+  </div>
+  <div class="habito">
+    <div class="habito-icon">📦</div>
+    <div>
+      <h4>Ten algo preparado siempre</h4>
+      <p>Más fácil tomar buenas decisiones con poco tiempo. Menos comidas improvisadas y más constancia sin depender de motivación.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="yellow-box">
+    <span class="yellow-box-title">Tip · Checklist de porciones</span>
+    <p>Si te cuesta organizar tus comidas, anota tus porciones diarias en las notas del celular o en una pizarra del refrigerador y ve marcando a medida que avanza el día. Es opcional, pero ayuda mucho al principio.</p>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="cierre" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:3rem 2.5rem">
+  <h2>Compra · Prepara · <em>Avanza</em></h2>
+  <p style="margin:1rem 0 1.5rem">Los cambios simples empiezan con hábitos pequeños que sí puedes mantener. No necesitas hacerlo todo perfecto — solo empezar.</p>
+  <div class="cierre-contact">
+    <strong>¿Tienes dudas? Escríbeme.</strong>
+    WhatsApp: +56 9 8906 8812<br>
+    Instagram: @nutri.pamecid<br>
+    <span style="font-size:11px;opacity:0.7">Prefiero que preguntes a que te quedes con la duda.</span>
+  </div>
+</div>
+
+</body>
+</html>
