@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porciones de alimentos · Video 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;
+  --purple-light:#ede9fe;
+  --purple-dark:#5b21b6;
+  --yellow:#f5c518;
+  --yellow-light:#fefce8;
+  --yellow-dark:#b45309;
+  --green-light:#f0fdf4;
+  --green:#16a34a;
+  --orange-light:#fff7ed;
+  --orange:#ea580c;
+  --cream:#fafaf8;
+  --white:#ffffff;
+  --text:#1a1714;
+  --muted:#6b6560;
+  --border:rgba(124,58,237,0.1);
+}
+body{
+  background:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  color:var(--text);
+  max-width:480px;margin:0 auto;
+}
+
+/* PORTADA */
+.cover{
+  background:#5b21b6;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  padding:3rem 2.5rem;
+  position:relative;overflow:hidden;
+  page-break-after:always;
+}
+.cover-circle1{
+  position:absolute;top:-60px;right:-60px;
+  width:220px;height:220px;border-radius:50%;
+  background:rgba(124,58,237,0.25);
+}
+.cover-circle2{
+  position:absolute;bottom:-80px;left:-40px;
+  width:200px;height:200px;border-radius:50%;
+  background:rgba(245,197,24,0.08);
+}
+.cover-badge{
+  position:relative;z-index:1;
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(167,139,250,0.2);
+  border:0.5px solid rgba(167,139,250,0.3);
+  border-radius:100px;padding:5px 12px;
+  font-size:10px;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;color:#a78bfa;width:fit-content;
+}
+.cover-main{position:relative;z-index:1;margin:auto 0;padding:2rem 0}
+.cover h1{
+  font-family:'Fraunces',serif;
+  font-size:2.8rem;font-weight:300;
+  line-height:1.1;color:var(--white);margin-bottom:1.25rem;
+}
+.cover h1 em{font-style:italic;color:var(--yellow)}
+.cover-sub{
+  font-size:14px;font-weight:300;
+  color:rgba(255,255,255,0.6);line-height:1.7;
+}
+.cover-index{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;gap:7px;margin-top:2rem;
+}
+.cover-index-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:12.5px;color:rgba(255,255,255,0.55);font-weight:300;
+}
+.cover-index-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--purple-light);flex-shrink:0;
+}
+.cover-footer{
+  position:relative;z-index:1;
+  font-size:12px;color:rgba(255,255,255,0.35);
+}
+
+/* PÁGINAS */
+.page{
+  padding:2.5rem 2rem;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  border-bottom:1px solid var(--border);
+  page-break-after:always;
+}
+.page-label{
+  font-size:10px;font-weight:600;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--purple);margin-bottom:0.75rem;
+}
+.page h2{
+  font-family:'Fraunces',serif;
+  font-size:1.9rem;font-weight:300;line-height:1.2;
+  margin-bottom:0.5rem;
+}
+.page h2 em{font-style:italic;color:var(--purple)}
+.page-intro{
+  font-size:14px;color:var(--muted);font-weight:300;
+  line-height:1.7;margin-bottom:1.75rem;
+  padding-bottom:1.5rem;border-bottom:0.5px solid var(--border);
+}
+
+/* BADGE PORCIÓN */
+.porcion-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--yellow);border-radius:100px;
+  padding:5px 14px;font-size:12px;font-weight:700;
+  color:var(--text);margin-bottom:1.25rem;
+}
+
+/* GRUPO CARD */
+.grupo{
+  background:var(--white);border:0.5px solid var(--border);
+  border-radius:16px;overflow:hidden;margin-bottom:12px;
+}
+.grupo-header{
+  padding:1rem 1.25rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.grupo-header h3{font-size:15px;font-weight:600;color:var(--text)}
+.grupo-porcion{
+  font-size:11px;font-weight:700;
+  background:var(--purple-light);color:var(--purple-dark);
+  border-radius:100px;padding:3px 10px;
+}
+.grupo-body{
+  padding:0 1.25rem 1.25rem;
+  border-top:0.5px solid var(--border);
+  padding-top:1rem;
+}
+.grupo-body p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.6;margin-bottom:0.75rem}
+
+/* EJEMPLOS GRID */
+.ej-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:6px;margin-top:0.75rem;
+}
+.ej-item{
+  background:var(--purple-light);border-radius:8px;
+  padding:7px 8px;text-align:center;
+  font-size:11.5px;color:var(--purple-dark);font-weight:500;line-height:1.4;
+}
+
+/* TIPS */
+.tip{
+  background:var(--yellow-light);border:0.5px solid rgba(245,197,24,0.3);
+  border-radius:10px;padding:0.875rem 1rem;margin-top:8px;
+  font-size:12.5px;color:#78716c;font-weight:300;line-height:1.6;
+}
+.tip strong{font-weight:600;color:var(--yellow-dark)}
+
+/* PRIORIZAR */
+.priorizar{
+  background:var(--green-light);border:0.5px solid rgba(22,163,74,0.2);
+  border-radius:12px;padding:1rem 1.25rem;margin:8px 0;
+}
+.priorizar-title{
+  font-size:11px;font-weight:700;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--green);margin-bottom:6px;display:block;
+}
+.priorizar p{font-size:13px;color:#166534;font-weight:300;line-height:1.5}
+
+.moderar{
+  background:var(--orange-light);border:0.5px solid rgba(234,88,12,0.2);
+  border-radius:12px;padding:1rem 1.25rem;margin:8px 0;
+}
+.moderar-title{
+  font-size:11px;font-weight:700;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:6px;display:block;
+}
+.moderar p{font-size:13px;color:#7c2d12;font-weight:300;line-height:1.5}
+
+/* COMO MEDIR */
+.medir-list{display:flex;flex-direction:column;gap:8px;margin:1rem 0}
+.medir-item{
+  background:var(--white);border:0.5px solid var(--border);
+  border-radius:10px;padding:10px 14px;
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;color:var(--text);font-weight:400;
+}
+.medir-icon{font-size:18px;flex-shrink:0}
+
+/* ETIQUETADO */
+.etiqueta-table{
+  background:var(--white);border:0.5px solid var(--border);
+  border-radius:14px;overflow:hidden;margin:1rem 0;
+}
+.et-header{
+  background:#5b21b6;
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  padding:10px 14px;gap:8px;
+}
+.et-header span{font-size:11px;font-weight:600;color:white;letter-spacing:0.05em}
+.et-row{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  padding:10px 14px;gap:8px;
+  border-top:0.5px solid var(--border);
+}
+.et-row:last-child{background:rgba(124,58,237,0.04)}
+.et-row span{font-size:12.5px;color:var(--muted);font-weight:300}
+.et-row span.highlight{color:var(--purple);font-weight:600}
+.et-ref{
+  display:flex;flex-direction:column;gap:6px;
+  background:var(--purple-light);border-radius:12px;
+  padding:1rem 1.25rem;margin-top:0.75rem;
+}
+.et-ref-item{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;
+}
+.et-ref-item span:first-child{color:var(--muted);font-weight:300}
+.et-ref-item span:last-child{color:var(--purple-dark);font-weight:600}
+
+/* CIERRE */
+.cierre{
+  background:#5b21b6;
+  padding:3rem 2.5rem;
+  min-height:50vh;
+  display:flex;flex-direction:column;
+  justify-content:center;
+  text-align:center;
+}
+.cierre h2{
+  font-family:'Fraunces',serif;
+  font-size:2rem;font-weight:300;
+  color:white;margin-bottom:0.875rem;line-height:1.2;
+}
+.cierre h2 em{font-style:italic;color:var(--yellow)}
+.cierre p{font-size:13px;color:rgba(255,255,255,0.65);font-weight:300;line-height:1.7}
+
+.divider{height:0.5px;background:var(--border);margin:1.25rem 0}
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+  <div class="cover-circle1"></div>
+  <div class="cover-circle2"></div>
+  <span class="cover-badge">Video 1 · Programa Nutricional</span>
+  <div class="cover-main">
+    <h1>Porciones<br>e <em>intercambio</em><br>de alimentos</h1>
+    <p class="cover-sub">Entiende cómo funciona el sistema de porciones para que puedas aplicar tu pauta con flexibilidad desde el día 1.</p>
+    <div class="cover-index">
+      <div class="cover-index-item"><span class="cover-index-dot"></span>Carbohidratos</div>
+      <div class="cover-index-item"><span class="cover-index-dot"></span>Proteínas</div>
+      <div class="cover-index-item"><span class="cover-index-dot"></span>Grasas</div>
+      <div class="cover-index-item"><span class="cover-index-dot"></span>Frutas y verduras</div>
+      <div class="cover-index-item"><span class="cover-index-dot"></span>Legumbres</div>
+      <div class="cover-index-item"><span class="cover-index-dot"></span>Lácteos</div>
+      <div class="cover-index-item"><span class="cover-index-dot"></span>Azúcares</div>
+      <div class="cover-index-item"><span class="cover-index-dot"></span>Cómo leer el etiquetado</div>
+    </div>
+  </div>
+  <div class="cover-footer">Nta. Pamela Cid · @nutri.pamecid</div>
+</div>
+
+<!-- EL SISTEMA -->
+<div class="page">
+  <span class="page-label">El sistema</span>
+  <h2>¿Cómo <em>funciona</em>?</h2>
+  <p class="page-intro">Tu pauta está hecha con porciones diarias por grupos de alimentos. Cada grupo cumple una función específica. Dentro de cada grupo, puedes intercambiar un alimento por otro respetando la porción equivalente.</p>
+
+  <div style="background:var(--white);border:0.5px solid var(--border);border-radius:16px;padding:1.5rem;margin-bottom:1rem">
+    <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:0.75rem">¿Qué es 1 porción?</p>
+    <p style="font-size:13px;color:var(--muted);font-weight:300;line-height:1.6">La cantidad de alimento que aporta una cantidad específica de calorías, carbohidratos, proteínas o grasas. Es intercambiable por cualquier alimento de la misma lista.</p>
+  </div>
+
+  <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:0.875rem">¿Cómo medir?</p>
+  <div class="medir-list">
+    <div class="medir-item"><span class="medir-icon">⚖️</span>Balanza digital de alimentos</div>
+    <div class="medir-item"><span class="medir-icon">🥄</span>1 cucharada sopera (15g) / 1 cucharadita (5g)</div>
+    <div class="medir-item"><span class="medir-icon">🥤</span>1 taza / ½ taza / 1 vaso de 200cc</div>
+    <div class="medir-item"><span class="medir-icon">✋</span>Foto de la mano (palma, mano entera)</div>
+    <div class="medir-item"><span class="medir-icon">🔢</span>Por unidad según el alimento</div>
+  </div>
+</div>
+
+<!-- CARBOHIDRATOS -->
+<div class="page">
+  <span class="page-label">Grupo 1</span>
+  <h2><em>Carbohidratos</em></h2>
+  <span class="porcion-badge">1 porción = 30g de carbohidratos</span>
+  <p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:1.5rem">Principal fuente de energía para el día y tus entrenamientos. Ayudan al rendimiento y recuperación muscular.</p>
+
+  <div class="priorizar">
+    <span class="priorizar-title">Con mayor fibra · buena opción para la mayoría</span>
+    <p>Avena · Alimentos integrales · Quinoa · Arroz · Papas</p>
+  </div>
+  <div class="moderar">
+    <span class="moderar-title">Más simples · según tu contexto</span>
+    <p>Galletas · Cereales con azúcar · Alimentos pre elaborados</p>
+  </div>
+
+  <div style="background:var(--purple-light);border:0.5px solid rgba(124,58,237,0.15);border-radius:12px;padding:1rem 1.25rem;margin:0.75rem 0">
+    <p style="font-size:13px;color:var(--purple-dark);font-weight:300;line-height:1.6">La cantidad, cuál priorizar y la distribución dependen de tus objetivos, nivel de actividad, horarios de entrenamiento y tolerancia individual. Se ajusta en la asesoría.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:0.875rem">Ejemplos de 1 porción</p>
+  <div class="ej-grid">
+    <div class="ej-item">40g avena</div>
+    <div class="ej-item">40g cereales</div>
+    <div class="ej-item">2–3 reb. pan molde</div>
+    <div class="ej-item">130g arroz cocido</div>
+    <div class="ej-item">110g fideos cocidos</div>
+    <div class="ej-item">150g papas blancas</div>
+    <div class="ej-item">1 fajita XL</div>
+    <div class="ej-item">4–6 galletas arroz</div>
+    <div class="ej-item">50g pan ciabatta</div>
+  </div>
+
+  <div class="tip">
+    <strong>Cómo pesar:</strong> Avena, cereales, granola, pan y papas → en crudo. Arroz, fideos y quinoa → en cocido.
+  </div>
+</div>
+
+<!-- PROTEÍNAS -->
+<div class="page">
+  <span class="page-label">Grupo 2</span>
+  <h2><em>Proteínas</em></h2>
+  <span class="porcion-badge">1 porción = 11g de proteínas</span>
+  <p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:1.5rem">Ayudan a mantener y desarrollar masa muscular, aumentan la saciedad y reducen el hambre entre comidas.</p>
+
+  <div class="priorizar">
+    <span class="priorizar-title">Priorizar</span>
+    <p>Carnes rojas y blancas bajas en grasa · Pescados · Mariscos · Huevos</p>
+  </div>
+  <div class="moderar">
+    <span class="moderar-title">Ocasiones especiales</span>
+    <p>Carnes procesadas — mayor aporte de sodio, grasas saturadas y trans.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:0.875rem">Fuentes de proteínas</p>
+  <div class="ej-grid">
+    <div class="ej-item">Pollo</div>
+    <div class="ej-item">Carne vacuno</div>
+    <div class="ej-item">Atún / Jurel</div>
+    <div class="ej-item">Salmón</div>
+    <div class="ej-item">Huevo</div>
+    <div class="ej-item">Proteína polvo</div>
+    <div class="ej-item">Barrita proteína</div>
+    <div class="ej-item">Legumbres</div>
+    <div class="ej-item">Proteína soya</div>
+  </div>
+
+  <div class="tip">
+    <strong>Suplementación:</strong> En las asesorías se evalúa si debes consumir suplemento proteico o recomendaciones de barritas.
+  </div>
+</div>
+
+<!-- GRASAS -->
+<div class="page">
+  <span class="page-label">Grupo 3</span>
+  <h2><em>Grasas</em></h2>
+  <span class="porcion-badge">1 porción = 5g de grasas</span>
+  <p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:1.5rem">Nutriente esencial. Ayudan al funcionamiento hormonal, absorción de vitaminas, saciedad y energía durante el día.</p>
+
+  <div class="priorizar">
+    <span class="priorizar-title">Priorizar a diario</span>
+    <p>Palta · Frutos secos · Aceite de oliva · Semillas de chía · Linaza</p>
+  </div>
+  <div class="moderar">
+    <span class="moderar-title">Con menor frecuencia</span>
+    <p>Cremas · Mantequilla · Mayonesas</p>
+  </div>
+
+  <div class="tip" style="margin:0.75rem 0">
+    <strong>Cómo incluirlas:</strong> Incluye en su mayoría grasas saludables a diario. Puedes incorporarlas en comidas principales para tener preparaciones más completas y equilibradas.
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:0.875rem">Ejemplos de 1 porción</p>
+  <div class="ej-grid">
+    <div class="ej-item">60g palta</div>
+    <div class="ej-item">2 cdtas aceite oliva</div>
+    <div class="ej-item">10g maní</div>
+    <div class="ej-item">10g nueces</div>
+    <div class="ej-item">10g almendras</div>
+    <div class="ej-item">1 cdta mantequilla maní</div>
+  </div>
+</div>
+
+<!-- FRUTAS, VERDURAS Y LEGUMBRES -->
+<div class="page">
+  <span class="page-label">Grupos 4 · 5 · 6</span>
+  <h2>Frutas, verduras<br><em>y legumbres</em></h2>
+
+  <div class="grupo">
+    <div class="grupo-header">
+      <h3>Frutas</h3>
+      <span class="grupo-porcion">1 porción = 15g carb</span>
+    </div>
+    <div class="grupo-body">
+      <p>Aportan carbohidratos, fibra, vitaminas y minerales. Antes de entrenar, prefiere frutas de fácil digestión para energía rápida.</p>
+      <div class="ej-grid">
+        <div class="ej-item">½ plátano</div>
+        <div class="ej-item">90g mango</div>
+        <div class="ej-item">20g dátiles</div>
+        <div class="ej-item">100g manzana</div>
+        <div class="ej-item">120g piña</div>
+        <div class="ej-item">100g uvas</div>
+        <div class="ej-item">20g pasas</div>
+        <div class="ej-item">1 naranja</div>
+        <div class="ej-item">3 mandarinas</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grupo">
+    <div class="grupo-header">
+      <h3>Verduras</h3>
+      <span class="grupo-porcion">1 porción = 5g carb</span>
+    </div>
+    <div class="grupo-body">
+      <p>Elige las frescas, cocidas, salteadas o fáciles de preparar como las congeladas o en bolsas listas para consumo.</p>
+    </div>
+  </div>
+
+  <div class="grupo" style="border-color:rgba(22,163,74,0.2)">
+    <div class="grupo-header" style="background:var(--green-light)">
+      <h3 style="color:#166534">Verduras hojas verdes</h3>
+      <span class="grupo-porcion" style="background:rgba(22,163,74,0.15);color:#166534">Libre consumo</span>
+    </div>
+    <div class="grupo-body">
+      <p>Lechuga · Pepino · Apio · Espinaca · Repollo — come la cantidad que quieras sin contar porción.</p>
+    </div>
+  </div>
+
+  <div class="grupo">
+    <div class="grupo-header">
+      <h3>Legumbres</h3>
+      <span class="grupo-porcion">Carb + proteína</span>
+    </div>
+    <div class="grupo-body">
+      <p style="font-size:13px;color:var(--purple-dark);font-weight:500;margin-bottom:0.75rem">Excelente fuente de proteína vegetal, fibra y carbohidratos complejos.</p>
+      <p>1 taza cocida = 1 porción carbohidratos + 1 porción proteínas.<br>½ caja = ½ porción carbohidratos + 1 porción proteínas.</p>
+      <div class="tip" style="margin-top:0.75rem">Para mejorar absorción del hierro: consúmelas con cítricos, tomate, zanahoria o betarraga.</div>
+    </div>
+  </div>
+</div>
+
+<!-- LÁCTEOS -->
+<div class="page">
+  <span class="page-label">Grupo 7</span>
+  <h2><em>Lácteos</em></h2>
+  <span class="porcion-badge">Proteínas · carbohidratos · calcio</span>
+  <p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:1.5rem">Se clasifican según su aporte de grasas. La elección depende de tu contexto y objetivo — en la guía tienes distintas opciones.</p>
+
+  <div class="grupo">
+    <div class="grupo-header"><h3>Descremados</h3></div>
+    <div class="grupo-body"><p>Menor aporte de grasas.</p></div>
+  </div>
+  <div class="grupo">
+    <div class="grupo-header"><h3>Semi descremados</h3></div>
+    <div class="grupo-body"><p>Aporte medio de grasas.</p></div>
+  </div>
+  <div class="grupo">
+    <div class="grupo-header"><h3>Enteros</h3></div>
+    <div class="grupo-body"><p>Aporte mayor de grasas.</p></div>
+  </div>
+  <div class="grupo" style="border-color:rgba(124,58,237,0.2)">
+    <div class="grupo-header" style="background:var(--purple-light)">
+      <h3 style="color:var(--purple-dark)">Lácteos protein</h3>
+      <span class="grupo-porcion">10–15g proteína</span>
+    </div>
+    <div class="grupo-body"><p>Buena opción para llegar a tus proteínas diarias.</p></div>
+  </div>
+  <div class="grupo">
+    <div class="grupo-header"><h3>Otros lácteos</h3><span class="grupo-porcion">Consumo ocasional</span></div>
+    <div class="grupo-body"><p>Queso, ricotta, manjar light — más procesados.</p></div>
+  </div>
+</div>
+
+<!-- AZÚCARES -->
+<div class="page">
+  <span class="page-label">Grupo 8</span>
+  <h2>Azúcares<br><em>y deporte</em></h2>
+  <span class="porcion-badge">1 porción = 5g de carbohidratos</span>
+  <p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:1.5rem">Se utilizan para aportar energía rápida antes y/o durante tus entrenamientos para mejorar tu rendimiento.</p>
+
+  <div class="priorizar">
+    <span class="priorizar-title">Antes de entrenar</span>
+    <p>Ideal si tienes poco tiempo para comer antes de tu sesión.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:0.875rem">¿Qué opciones encontrarás en la guía?</p>
+  <div class="ej-grid">
+    <div class="ej-item">Miel</div>
+    <div class="ej-item">Azúcar</div>
+    <div class="ej-item">Mermelada</div>
+    <div class="ej-item">Manjar</div>
+  </div>
+
+  <div class="tip" style="margin-top:1.25rem">
+    <strong>Importante:</strong> El objetivo no es eliminar el azúcar, sino aprender a saber cuándo y cómo incluirlo, manejar las porciones, entender cuál elegir según tu contexto y mantener una alimentación equilibrada y sostenible.
+  </div>
+</div>
+
+<!-- ETIQUETADO NUTRICIONAL -->
+<div class="page">
+  <span class="page-label">Lectura de etiquetas</span>
+  <h2>1 porción en el<br><em>etiquetado</em></h2>
+  <p class="page-intro">Cuando compres un producto procesado, así es como identificas cuántas porciones de cada grupo te aporta.</p>
+
+  <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:0.75rem">Revisa siempre la columna "Por cada 1 porción"</p>
+  <div class="etiqueta-table">
+    <div class="et-header">
+      <span>Valores</span>
+      <span>Por 100g</span>
+      <span>Por porción</span>
+    </div>
+    <div class="et-row">
+      <span>Carbohidratos</span>
+      <span>42g</span>
+      <span class="highlight">30.2g</span>
+    </div>
+    <div class="et-row">
+      <span>Azúcares</span>
+      <span>4.2g</span>
+      <span>3g</span>
+    </div>
+    <div class="et-row">
+      <span>Fibra</span>
+      <span>5.6g</span>
+      <span>4g</span>
+    </div>
+    <div class="et-row">
+      <span>Sodio</span>
+      <span>212mg</span>
+      <span>152.6mg</span>
+    </div>
+  </div>
+
+  <div class="et-ref">
+    <div class="et-ref-item">
+      <span>1 porción carbohidratos =</span>
+      <span>30g por porción</span>
+    </div>
+    <div class="et-ref-item">
+      <span>1 porción proteínas =</span>
+      <span>11g por porción</span>
+    </div>
+    <div class="et-ref-item">
+      <span>1 porción grasas =</span>
+      <span>5g por porción</span>
+    </div>
+  </div>
+
+  <div class="tip" style="margin-top:1rem">
+    <strong>¿Y si no es exacto?</strong> Una diferencia de ±5–10g está bien. No necesita ser exacto. Si la diferencia es mayor, consúltame.
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <h2>Mismo grupo →<br><em>misma porción</em></h2>
+  <p>Esa es la regla base del sistema. Guarda tu guía de porciones — la vas a usar cada vez que quieras variar o no tengas un alimento disponible.</p>
+</div>
+
+</body>
+</html>
