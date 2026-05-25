@@ -1,0 +1,81 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}
+.feed{display:flex;flex-direction:column;align-items:center;padding:24px 16px;background:#e8e0fc}
+.story{width:360px;height:640px;position:relative;overflow:hidden;border-radius:18px;flex-shrink:0;box-shadow:0 8px 32px rgba(0,0,0,.15)}
+.sn{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.35);color:#fff;font-size:9px;font-weight:700;letter-spacing:.08em;padding:3px 9px;border-radius:20px;z-index:10}
+</style>
+<div class="feed">
+<div class="story">
+<div class="sn">8 / 8</div>
+<div style="position:absolute;inset:0;background:#1c1917"></div>
+<div style="position:absolute;top:-40px;right:-40px;width:150px;height:150px;border-radius:50%;background:#2c2c2a"></div>
+<div style="position:absolute;bottom:-35px;left:-35px;width:120px;height:120px;border-radius:50%;background:rgba(124,58,237,.12)"></div>
+<div style="position:absolute;left:0;right:0;top:0;height:3px;background:#f5c518"></div>
+
+<div style="position:absolute;inset:0;padding:18px 22px 70px;display:flex;flex-direction:column">
+
+  <!-- logos -->
+  <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px">
+    <div style="background:#7c3aed;border-radius:7px;padding:5px 10px"><span style="font-size:9px;font-weight:800;color:#fff;letter-spacing:.05em">NUTRI.PAMECID</span></div>
+    <span style="font-size:14px;color:rgba(255,255,255,.35);font-weight:300">×</span>
+    <div style="background:#f5c518;border-radius:7px;padding:5px 10px"><span style="font-size:9px;font-weight:800;color:#1c1917;letter-spacing:.05em">MASQUEFUERZA</span></div>
+  </div>
+
+  <!-- título -->
+  <div style="font-family:Georgia,serif;font-size:28px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:6px">Entrenamiento<br><em style="color:#f5c518">+ Nutrición</em></div>
+
+  <!-- subtítulo -->
+  <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">Planificación · Análisis Técnico · Seguimiento</div>
+
+  <!-- descripción -->
+  <div style="background:rgba(255,255,255,.06);border:0.5px solid rgba(255,255,255,.12);border-radius:10px;padding:9px 12px;margin-bottom:12px">
+    <p style="font-size:10.5px;color:rgba(255,255,255,.75);line-height:1.55;font-style:italic">"Perseguimos tus objetivos en conjunto, corregimos ineficiencias de movimiento y mantenemos una retroalimentación constante."</p>
+  </div>
+
+  <!-- lo que incluyen AMBOS planes -->
+  <div style="background:rgba(245,197,24,.1);border:0.5px solid rgba(245,197,24,.3);border-radius:11px;padding:10px 13px;margin-bottom:11px">
+    <div style="font-size:9px;font-weight:800;color:#f5c518;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Todos los planes incluyen</div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;gap:7px;align-items:flex-start">
+        <div style="width:4px;height:4px;border-radius:50%;background:#f5c518;flex-shrink:0;margin-top:5px"></div>
+        <p style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.35">Programación de entrenamiento</p>
+      </div>
+      <div style="display:flex;gap:7px;align-items:flex-start">
+        <div style="width:4px;height:4px;border-radius:50%;background:#f5c518;flex-shrink:0;margin-top:5px"></div>
+        <p style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.35">Plan nutricional con porciones y gramajes</p>
+      </div>
+      <div style="display:flex;gap:7px;align-items:flex-start">
+        <div style="width:4px;height:4px;border-radius:50%;background:#f5c518;flex-shrink:0;margin-top:5px"></div>
+        <p style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.35">Seguimiento online</p>
+      </div>
+      <div style="display:flex;gap:7px;align-items:flex-start">
+        <div style="width:4px;height:4px;border-radius:50%;background:#f5c518;flex-shrink:0;margin-top:5px"></div>
+        <p style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.35">Acceso a drive con movimientos de activación y ejercicios</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- modalidades -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto">
+    <div style="background:rgba(255,255,255,.07);border:0.5px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 12px">
+      <div style="font-size:9px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Plan Mensual</div>
+      <div style="font-size:9px;color:rgba(255,255,255,.45);line-height:1.4">Modalidad de 1 mes con ajustes semanales.</div>
+    </div>
+    <div style="background:rgba(245,197,24,.12);border:0.5px solid rgba(245,197,24,.4);border-radius:10px;padding:10px 12px">
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px">
+        <div style="font-size:9px;font-weight:800;color:#f5c518;text-transform:uppercase;letter-spacing:.06em">Plan Trimestral</div>
+        <div style="background:#f5c518;border-radius:6px;padding:1px 6px"><span style="font-size:7.5px;font-weight:800;color:#1c1917">Recomendado</span></div>
+      </div>
+      <div style="font-size:9px;color:rgba(255,255,255,.45);line-height:1.4">Modalidad de 3 meses con seguimiento continuo.</div>
+    </div>
+  </div>
+
+</div>
+
+<div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.4);height:60px;padding:0 22px;display:flex;align-items:center;justify-content:space-between">
+  <span style="font-size:10.5px;font-weight:700;color:rgba(255,255,255,.6)">@nutri.pamecid · @masquefuerza_</span>
+  <div style="background:#f5c518;border-radius:20px;padding:6px 13px"><span style="font-size:10px;font-weight:800;color:#1c1917">Consultar →</span></div>
+</div>
+</div>
+</div>
+</div>
