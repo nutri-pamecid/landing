@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Básico Nutricional · Gimnasio Seven · Pamela Cid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;
+  --purple-light:#ede9fe;
+  --purple-mid:#a78bfa;
+  --purple-dark:#5b21b6;
+  --purple-deeper:#3b0764;
+  --yellow:#f5c518;
+  --yellow-light:#fefce8;
+  --yellow-dark:#b45309;
+  --cream:#fafaf9;
+  --white:#ffffff;
+  --text:#1c1917;
+  --muted:#78716c;
+  --light:#a8a29e;
+  --border:rgba(124,58,237,0.12);
+  --border-soft:rgba(124,58,237,0.08);
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;padding:0.875rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(250,250,249,0.9);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);z-index:100}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:15px;color:var(--purple-dark);text-decoration:none}
+.nav-tag{font-size:12px;font-weight:400;color:var(--light)}
+
+/* HERO */
+.hero{padding:7rem 1.5rem 3rem;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(124,58,237,0.07) 0%,transparent 70%)}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--purple-dark);background:var(--purple-light);border:0.5px solid var(--purple-mid);border-radius:100px;padding:5px 14px;margin-bottom:1.25rem}
+.eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--purple)}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,3rem);line-height:1.15;color:var(--text);max-width:600px;margin:0 auto 1rem;letter-spacing:-0.01em}
+.hero h1 em{font-style:italic;color:var(--purple)}
+.hero-sub{font-size:15px;font-weight:300;color:var(--muted);max-width:480px;margin:0 auto;line-height:1.75}
+
+/* CONTENT */
+.content{max-width:620px;margin:0 auto;padding:2rem 1.5rem 5rem}
+
+/* SECTION */
+.section{margin-bottom:2.5rem}
+.section-label{font-size:10.5px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple);margin-bottom:0.875rem;display:block}
+.section-title{font-family:'DM Serif Display',serif;font-size:1.5rem;line-height:1.2;margin-bottom:1rem;color:var(--text)}
+
+/* METHODS GRID */
+.methods-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0}
+.method-card{background:var(--white);border:0.5px solid var(--border);border-radius:14px;padding:1.25rem;transition:border-color 0.2s}
+.method-card:hover{border-color:var(--purple-mid)}
+.method-name{font-size:14px;font-weight:500;color:var(--text);margin-bottom:5px}
+.method-desc{font-size:13px;color:var(--muted);font-weight:300;line-height:1.55}
+
+/* CHECKLIST */
+.check-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.check-list li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:var(--text);font-weight:300;padding:14px 16px;background:var(--white);border:0.5px solid var(--border);border-radius:12px;line-height:1.55}
+.check-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--purple-light);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.check-icon svg{width:10px;height:10px}
+
+/* CLOTHING GRID */
+.clothing-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.clothing-card{background:var(--white);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.25rem}
+.clothing-type{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);margin-bottom:5px;display:block}
+.clothing-desc{font-size:14px;color:var(--text);font-weight:300;line-height:1.55}
+.clothing-note{font-size:13px;color:var(--muted);font-weight:300;margin-top:4px;font-style:italic}
+
+/* INFO BOX */
+.info-box{background:var(--purple);border-radius:16px;padding:1.5rem;color:var(--white);margin-bottom:2rem}
+.info-box p{font-size:14.5px;font-weight:300;line-height:1.7;opacity:0.9}
+.info-box strong{font-weight:500;opacity:1}
+
+/* NOTE BOX */
+.note-box{background:var(--yellow-light);border:0.5px solid rgba(245,197,24,0.4);border-radius:12px;padding:1rem 1.25rem;margin-bottom:2rem}
+.note-box p{font-size:13.5px;color:var(--yellow-dark);font-weight:400;line-height:1.6}
+
+/* DIVIDER */
+.divider{height:0.5px;background:var(--border);margin:2rem 0}
+
+/* FOOTER */
+footer{padding:1.5rem;text-align:center;font-size:12px;color:var(--light);border-top:0.5px solid var(--border);position:relative;z-index:1}
+footer a{color:var(--purple);text-decoration:none}
+footer strong{color:var(--text)}
+
+@media(max-width:520px){
+  nav{padding:0.875rem 1.25rem}
+  .methods-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.9rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Pamela Cid · Nutricionista</a>
+  <span class="nav-tag">Gimnasio Seven · Viña del Mar</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span class="eyebrow-dot"></span>Plan Básico Nutricional · Gimnasio Seven</div>
+  <h1>Indicaciones de <em>evaluación</em></h1>
+  <p class="hero-sub">Con el fin de brindar un servicio de la mejor calidad posible, es importante que revises estas indicaciones antes de tu sesión. Te avisaré qué método de medición se realizará según tu caso. <em>(No es obligatorio medirse si no lo deseas).</em></p>
+</section>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- MÉTODOS -->
+  <div class="section">
+    <span class="section-label">Métodos de evaluación</span>
+    <div class="methods-grid">
+      <div class="method-card">
+        <div class="method-name">ISAK 1</div>
+        <div class="method-desc">Medición de pliegues cutáneos y perímetros corporales con cinta métrica y caliper.</div>
+      </div>
+      <div class="method-card">
+        <div class="method-name">Bioimpedancia</div>
+        <div class="method-desc">Corriente eléctrica de baja intensidad para estimar composición corporal.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- INDICACIONES GENERALES -->
+  <div class="section">
+    <span class="section-label">Indicaciones generales</span>
+    <ul class="check-list">
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L3.5 7L8.5 2.5" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Debes estar en <strong>ayuno o que tu última comida haya sido 2–3 horas antes.</strong></span>
+      </li>
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L3.5 7L8.5 2.5" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong>No realizar ejercicio</strong> previo ni el mismo día de la evaluación.</span>
+      </li>
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L3.5 7L8.5 2.5" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Evitar el <strong>consumo de alcohol</strong> el día anterior y el mismo día.</span>
+      </li>
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L3.5 7L8.5 2.5" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Evitar el consumo de <strong>cafeína y diuréticos</strong> el mismo día de la evaluación.</span>
+      </li>
+      <li>
+        <span class="check-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L3.5 7L8.5 2.5" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Mantener una <strong>correcta hidratación</strong> — ni deshidratado/a ni sobre hidratado/a.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ROPA -->
+  <div class="section">
+    <span class="section-label">Ropa para la evaluación</span>
+    <div class="clothing-grid">
+      <div class="clothing-card">
+        <span class="clothing-type">Mujeres · ISAK 1</span>
+        <div class="clothing-desc">Asistir con <strong>short / calza corta deportiva y peto deportivo.</strong></div>
+        <div class="clothing-note">No debes estar con tu periodo menstrual.</div>
+      </div>
+      <div class="clothing-card">
+        <span class="clothing-type">Hombres · ISAK 1</span>
+        <div class="clothing-desc">Se realiza con <strong>short deportivo y sin polera</strong> para realizar medidas de tren superior.</div>
+      </div>
+      <div class="clothing-card">
+        <span class="clothing-type">Bioimpedancia</span>
+        <div class="clothing-desc">Se realiza con <strong>ropa ligera y sin calcetines,</strong> independiente del género.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- INFO CIERRE -->
+  <div class="info-box">
+    <p>Recibirás tu <strong>informe de composición corporal</strong> para revisar juntos los resultados en la sesión.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Pamela Cid · Nutricionista</strong><br>
+  <a href="https://instagram.com/nutri.pamecid">@nutri.pamecid</a> ·
+  <a href="https://wa.me/56989068812">WhatsApp +56 9 8906 8812</a>
+</footer>
+
+</body>
+</html>
