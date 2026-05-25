@@ -1,0 +1,83 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}
+.feed{display:flex;flex-direction:column;align-items:center;padding:24px 16px;background:#e8e0fc}
+.story{width:360px;height:640px;position:relative;overflow:hidden;border-radius:18px;flex-shrink:0;box-shadow:0 8px 32px rgba(0,0,0,.15)}
+.sn{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.35);color:#fff;font-size:9px;font-weight:700;letter-spacing:.08em;padding:3px 9px;border-radius:20px;z-index:10}
+</style>
+<div class="feed">
+<div class="story">
+<div class="sn">7 / 8</div>
+<div style="position:absolute;inset:0;background:#fafaf9"></div>
+<div style="position:absolute;left:0;top:0;bottom:0;width:13px;background:#7c3aed"></div>
+<div style="position:absolute;left:13px;right:0;top:0;height:3px;background:#f5c518"></div>
+
+<div style="position:absolute;left:13px;right:0;top:0;bottom:56px;padding:16px 18px 0;overflow:hidden">
+  <div style="background:#ede9fe;border-radius:20px;padding:4px 13px;display:inline-block;margin-bottom:10px">
+    <span style="font-size:9px;font-weight:800;color:#5b21b6;text-transform:uppercase;letter-spacing:.08em">Tu pauta personalizada</span>
+  </div>
+
+  <div style="font-family:Georgia,serif;font-size:24px;font-weight:700;color:#1c1917;line-height:1.15;margin-bottom:3px">Lo que incluye<br><em style="color:#7c3aed">tu planificación</em></div>
+  <div style="font-size:9.5px;font-weight:500;color:#78716c;margin-bottom:13px">Diseñada específicamente para ti y tu objetivo.</div>
+
+  <div style="display:flex;flex-direction:column;gap:8px">
+
+    <div style="background:#fff;border:0.5px solid #e8e0fc;border-radius:10px;padding:10px 13px;display:flex;gap:10px;align-items:flex-start">
+      <div style="width:22px;height:22px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+        <span style="font-size:9px;font-weight:800;color:#fff">1</span>
+      </div>
+      <div>
+        <p style="font-size:11.5px;font-weight:700;color:#1c1917;margin-bottom:2px">3 objetivos nutricionales</p>
+        <p style="font-size:10px;color:#78716c;line-height:1.35">Metas claras y personalizadas para tu proceso.</p>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:0.5px solid #e8e0fc;border-radius:10px;padding:10px 13px;display:flex;gap:10px;align-items:flex-start">
+      <div style="width:22px;height:22px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+        <span style="font-size:9px;font-weight:800;color:#fff">2</span>
+      </div>
+      <div>
+        <p style="font-size:11.5px;font-weight:700;color:#1c1917;margin-bottom:2px">Tus porciones diarias</p>
+        <p style="font-size:10px;color:#78716c;line-height:1.35">CHO · proteínas · grasas · lácteos · frutas · verduras.</p>
+      </div>
+    </div>
+
+    <div style="background:#7c3aed;border-radius:10px;padding:10px 13px;display:flex;gap:10px;align-items:flex-start">
+      <div style="width:22px;height:22px;border-radius:50%;background:#f5c518;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+        <span style="font-size:9px;font-weight:800;color:#1c1917">3</span>
+      </div>
+      <div>
+        <p style="font-size:11.5px;font-weight:700;color:#fff;margin-bottom:2px">Distribución por comidas</p>
+        <p style="font-size:10px;color:rgba(255,255,255,.8);line-height:1.35">Gramajes y porciones por cada tiempo de comida.</p>
+      </div>
+    </div>
+
+    <div style="background:#7c3aed;border-radius:10px;padding:10px 13px;display:flex;gap:10px;align-items:flex-start">
+      <div style="width:22px;height:22px;border-radius:50%;background:#f5c518;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+        <span style="font-size:9px;font-weight:800;color:#1c1917">4</span>
+      </div>
+      <div>
+        <p style="font-size:11.5px;font-weight:700;color:#fff;margin-bottom:2px">Indicaciones nutricionales personalizadas</p>
+        <p style="font-size:10px;color:rgba(255,255,255,.8);line-height:1.35">Pre entreno · suplementación (si aplica) · recomendaciones.</p>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:0.5px solid #e8e0fc;border-radius:10px;padding:10px 13px;display:flex;gap:10px;align-items:flex-start">
+      <div style="width:22px;height:22px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+        <span style="font-size:9px;font-weight:800;color:#fff">5</span>
+      </div>
+      <div>
+        <p style="font-size:11.5px;font-weight:700;color:#1c1917;margin-bottom:2px">Hidratación diaria</p>
+        <p style="font-size:10px;color:#78716c;line-height:1.35">Requerimiento hídrico personalizado según tu entreno.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="position:absolute;bottom:0;left:13px;right:0;background:#7c3aed;height:56px;padding:0 18px;display:flex;align-items:center;justify-content:space-between">
+  <span style="font-size:11px;font-weight:700;color:#fff">@nutri.pamecid</span>
+  <span style="background:#f5c518;border-radius:20px;padding:6px 13px;font-size:10px;font-weight:800;color:#1c1917">Agendar →</span>
+</div>
+</div>
+</div>
+</div>
