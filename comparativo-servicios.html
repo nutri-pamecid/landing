@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparativo · Pamela Cid · Nutricionista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#7c3aed;
+  --purple-light:#ede9fe;
+  --purple-mid:#a78bfa;
+  --purple-dark:#5b21b6;
+  --cream:#fafaf9;
+  --white:#ffffff;
+  --text:#1c1917;
+  --muted:#78716c;
+  --light:#a8a29e;
+  --border:rgba(124,58,237,0.12);
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;min-height:100vh;padding:2rem 1rem}
+.page{max-width:480px;margin:0 auto}
+
+.intro{font-size:14px;font-weight:300;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;padding:1.1rem 1.25rem;background:var(--white);border:0.5px solid var(--border);border-radius:14px}
+.intro strong{font-weight:500;color:var(--text)}
+
+/* CARDS */
+.card{border-radius:16px;margin-bottom:1rem;overflow:hidden}
+.card-prog{border:2px solid var(--purple-mid)}
+.card-unica{border:0.5px solid var(--border)}
+
+.card-head{padding:1.1rem 1.25rem}
+.card-head-prog{background:var(--purple-light)}
+.card-head-unica{background:var(--white)}
+
+.badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:8px}
+.badge-rec{background:var(--purple);color:#fff}
+.badge-simple{background:rgba(0,0,0,0.06);color:var(--muted)}
+
+.card-title{font-size:17px;font-weight:500;color:var(--purple-dark)}
+.card-title-unica{font-size:17px;font-weight:500;color:var(--text)}
+.card-price{font-size:22px;font-weight:500;margin-top:6px}
+.card-price-prog{color:var(--purple-dark)}
+.card-price-unica{color:var(--text)}
+.card-price-note{font-size:11px;color:var(--muted);font-weight:300;margin-top:2px}
+
+/* ROWS */
+.card-body{background:var(--white)}
+.card-prog .card-body{background:#f9f7ff}
+.row{display:flex;gap:10px;padding:11px 1.25rem;border-top:0.5px solid var(--border);align-items:flex-start}
+.card-prog .row{border-top:0.5px solid rgba(124,58,237,0.12)}
+.row-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--light);min-width:120px;padding-top:2px;flex-shrink:0}
+.row-val{font-size:13px;font-weight:300;color:var(--text);line-height:1.55;flex:1}
+.check{color:#16a34a;margin-right:3px}
+.dash{color:var(--light);margin-right:3px}
+
+/* CTA */
+.cta{margin-top:1.5rem;padding:1.1rem 1.25rem;background:var(--purple);border-radius:14px;color:#fff;font-size:14px;font-weight:300;line-height:1.75}
+.cta strong{font-weight:500}
+
+footer{margin-top:1.75rem;text-align:center;font-size:12px;color:var(--light)}
+footer a{color:var(--purple);text-decoration:none}
+
+/* DESKTOP: tabla de 3 columnas */
+@media(min-width:640px){
+  body{padding:3rem 1.5rem}
+  .page{max-width:700px}
+  .card{display:none}
+  .table-wrap{display:block}
+}
+@media(max-width:639px){
+  .table-wrap{display:none}
+}
+
+/* tabla desktop */
+.table-wrap table{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px}
+.table-wrap thead tr th{padding:14px 16px;text-align:left;font-weight:400}
+.table-wrap thead tr th:first-child{width:170px;background:var(--cream)}
+.table-wrap thead tr th.col-unica{background:var(--white);border:0.5px solid var(--border);border-bottom:none;border-radius:12px 12px 0 0}
+.table-wrap thead tr th.col-prog{background:var(--purple-light);border:2px solid var(--purple-mid);border-bottom:none;border-radius:12px 12px 0 0}
+.table-wrap tbody tr td{padding:11px 16px;border-bottom:0.5px solid var(--border);vertical-align:top;line-height:1.55;font-weight:300}
+.table-wrap tbody tr td:first-child{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;background:var(--cream);padding-top:14px}
+.table-wrap tbody tr td.col-unica{background:var(--white);border-left:0.5px solid var(--border);border-right:0.5px solid var(--border)}
+.table-wrap tbody tr td.col-prog{background:#f9f7ff;border-left:2px solid var(--purple-mid);border-right:2px solid var(--purple-mid)}
+.table-wrap tbody tr:last-child td.col-unica{border-bottom:0.5px solid var(--border);border-radius:0 0 12px 12px}
+.table-wrap tbody tr:last-child td.col-prog{border-bottom:2px solid var(--purple-mid);border-radius:0 0 12px 12px}
+.col-name{font-size:15px;font-weight:500;color:var(--text)}
+.col-name-prog{font-size:15px;font-weight:500;color:var(--purple-dark)}
+.price-dt{font-size:19px;font-weight:500;color:var(--text)}
+.price-prog-dt{font-size:19px;font-weight:500;color:var(--purple-dark)}
+.price-note-dt{font-size:11px;color:var(--muted);margin-top:3px;font-weight:400}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="intro">
+    <strong>Tengo dos modalidades de atención</strong>, pensadas para distintos momentos del proceso. La más adecuada para ti depende de lo que estás buscando — no del precio.
+  </div>
+
+  <!-- MOBILE: tarjetas apiladas -->
+
+  <!-- Programa primero (recomendado) -->
+  <div class="card card-prog">
+    <div class="card-head card-head-prog">
+      <div><span class="badge badge-rec">Recomendado</span></div>
+      <div class="card-title">Programa 3 meses</div>
+      <div class="card-price card-price-prog">$129.990 CLP</div>
+      <div class="card-price-note">Proceso completo · Online · Chile</div>
+    </div>
+    <div class="card-body">
+      <div class="row"><span class="row-label">Ideal para</span><span class="row-val">Quien quiere mejorar su físico, aprender a comer con estrategia y construir hábitos reales con acompañamiento</span></div>
+      <div class="row"><span class="row-label">Evaluación</span><span class="row-val"><span class="check">✓</span>Completa + seguimiento de evolución</span></div>
+      <div class="row"><span class="row-label">Plan alimentario</span><span class="row-val"><span class="check">✓</span>Personalizado + ajustes progresivos según cómo responde tu cuerpo</span></div>
+      <div class="row"><span class="row-label">Sesiones</span><span class="row-val"><span class="check">✓</span>3 sesiones (1 por mes): diagnóstico → estrategia → autonomía</span></div>
+      <div class="row"><span class="row-label">Ajustes</span><span class="row-val"><span class="check">✓</span>El plan se adapta mes a mes según tu evolución y rutina real</span></div>
+      <div class="row"><span class="row-label">WhatsApp</span><span class="row-val"><span class="check">✓</span>Acompañamiento diario por WhatsApp durante los 3 meses</span></div>
+      <div class="row"><span class="row-label">Hábitos</span><span class="row-val"><span class="check">✓</span>Proceso completo para construir hábitos que puedas mantener</span></div>
+    </div>
+  </div>
+
+  <!-- Sesión única -->
+  <div class="card card-unica">
+    <div class="card-head card-head-unica">
+      <div><span class="badge badge-simple">Opción puntual</span></div>
+      <div class="card-title-unica">Sesión única</div>
+      <div class="card-price card-price-unica">$35.000 online · $33.990 presencial</div>
+      <div class="card-price-note">Presencial en Gimnasio Seven (inscritos y externos)</div>
+    </div>
+    <div class="card-body">
+      <div class="row"><span class="row-label">Ideal para</span><span class="row-val">Quien necesita una orientación puntual, una evaluación o un punto de partida claro</span></div>
+      <div class="row"><span class="row-label">Evaluación</span><span class="row-val"><span class="check">✓</span>Completa</span></div>
+      <div class="row"><span class="row-label">Plan alimentario</span><span class="row-val"><span class="check">✓</span>Personalizado, enviado en 4 días hábiles</span></div>
+      <div class="row"><span class="row-label">Sesiones</span><span class="row-val"><span class="dash">—</span>No incluye</span></div>
+      <div class="row"><span class="row-label">Ajustes</span><span class="row-val"><span class="dash">—</span>No incluye</span></div>
+      <div class="row"><span class="row-label">WhatsApp</span><span class="row-val">Disponible durante 6 semanas</span></div>
+      <div class="row"><span class="row-label">Hábitos</span><span class="row-val"><span class="dash">—</span>Puntual</span></div>
+    </div>
+  </div>
+
+  <!-- DESKTOP: tabla -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th class="col-unica">
+            <div><span class="badge badge-simple">Opción puntual</span></div>
+            <div class="col-name">Sesión única</div>
+          </th>
+          <th class="col-prog">
+            <div><span class="badge badge-rec">Recomendado</span></div>
+            <div class="col-name-prog">Programa 3 meses</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Ideal para</td><td class="col-unica">Quien necesita una orientación puntual, una evaluación o un punto de partida claro</td><td class="col-prog">Quien quiere mejorar su físico, aprender a comer con estrategia y construir hábitos reales con acompañamiento</td></tr>
+        <tr><td>Evaluación inicial</td><td class="col-unica"><span class="check">✓</span>Completa</td><td class="col-prog"><span class="check">✓</span>Completa + seguimiento de evolución</td></tr>
+        <tr><td>Plan alimentario</td><td class="col-unica"><span class="check">✓</span>Personalizado, enviado en 4 días hábiles</td><td class="col-prog"><span class="check">✓</span>Personalizado + ajustes progresivos según cómo responde tu cuerpo</td></tr>
+        <tr><td>Sesiones de seguimiento</td><td class="col-unica"><span class="dash">—</span>No incluye</td><td class="col-prog"><span class="check">✓</span>3 sesiones (1 por mes): diagnóstico → estrategia → autonomía</td></tr>
+        <tr><td>Ajustes durante el proceso</td><td class="col-unica"><span class="dash">—</span>No incluye</td><td class="col-prog"><span class="check">✓</span>El plan se adapta mes a mes según tu evolución y rutina real</td></tr>
+        <tr><td>Seguimiento por WhatsApp</td><td class="col-unica">Disponible durante 6 semanas</td><td class="col-prog"><span class="check">✓</span>Acompañamiento diario por WhatsApp durante los 3 meses</td></tr>
+        <tr><td>Trabajo sobre hábitos</td><td class="col-unica"><span class="dash">—</span>Puntual</td><td class="col-prog"><span class="check">✓</span>Proceso completo para construir hábitos que puedas mantener</td></tr>
+        <tr><td>Inversión</td>
+          <td class="col-unica"><div class="price-dt">$35.000 online · $33.990 presencial</div><div class="price-note-dt">Presencial en Gimnasio Seven (inscritos y externos)</div></td>
+          <td class="col-prog"><div class="price-prog-dt">$129.990 CLP</div><div class="price-note-dt">Proceso completo · Online · Chile</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cta">
+    <strong>¿Cuál es la adecuada para ti?</strong> Cuéntame tu objetivo y te oriento sin compromiso — lo importante es que la modalidad que elijas realmente tenga sentido para lo que estás buscando.
+  </div>
+
+  <footer>
+    <strong>Pamela Cid · Nutricionista</strong> &nbsp;·&nbsp;
+    <a href="https://instagram.com/nutri.pamecid">@nutri.pamecid</a> &nbsp;·&nbsp;
+    <a href="https://wa.me/56989068812">WhatsApp</a>
+  </footer>
+
+</div>
+</body>
+</html>
